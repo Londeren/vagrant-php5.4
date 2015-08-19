@@ -1,11 +1,16 @@
 class apache 
 {      
+    file { [ "/etc/apache2", "/etc/apache2/logs"]:
+        ensure => "directory",
+        mode => 0766
+    }
+
     package 
     { 
         "apache2":
             ensure  => present,
             require => [Exec['apt-get update'], Package['php5'], Package['php5-dev'], Package['php5-cli']]
-    }
+    }    
     
     service 
     { 
@@ -33,6 +38,7 @@ class apache
         "/etc/apache2/sites-available/default":
             ensure  => present,
             owner => root, group => root,
+            mode   => '0766',
             # source  => "/vagrant/puppet/templates/vhost",
             content => template('apache/vhost.erb'),
             require => Package['apache2'],
