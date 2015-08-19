@@ -22,7 +22,7 @@ LAMP PHP 5.4 based on https://github.com/bryannielsen/Laravel4-Vagrant/tree/php5
 
 
 * Clone this repository `git clone https://github.com/Londeren/vagrant-php5.4.git vagrant54`
-* configure `config.json` in `vagrant54/` directory
+* edit `config.json` in `vagrant54/` directory
 * run `vagrant up` inside the newly created directory
 * (the first time you run vagrant it will need to fetch the virtual box image which is ~300mb so depending on your download speed this could take some time)
 * Vagrant will then use puppet to provision the base virtual box with our LAMP stack (this could take a few minutes) also note that composer will need to fetch all of the packages defined in the app's composer.json which will add some more time to the first provisioning run
