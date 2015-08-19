@@ -1,0 +1,15 @@
+{
+  "ip": "192.168.10.54",
+  "folders": [
+    {
+      "map": "/path/to/files/on/host",
+      "to": "/location/on/vm"
+    }
+  ],
+  "sites": [
+    {
+      "map": "app.dev",
+      "to": "/location/on/vm/www"
+    }
+  ]
+}
