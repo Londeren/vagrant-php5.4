@@ -2,7 +2,7 @@ class apache
 {      
     file { [ "/etc/apache2", "/etc/apache2/logs"]:
         ensure => "directory",
-        mode => 0766
+        mode => 776
     }
 
     package 

@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
         # Register All Of The Configured Shared Folders
         if jsonConfig.include? 'folders'
           jsonConfig["folders"].each do |folder|
-            conf.vm.synced_folder folder["map"], folder["to"], mount_options: []
+            conf.vm.synced_folder folder["map"], folder["to"], mount_options: [], owner: "www-data", group: "www-data"
           end
         end
 
